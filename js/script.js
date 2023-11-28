@@ -3,6 +3,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   fix100vh();
   findHeight();
+  animation();
   window.addEventListener("resize", () => {
     fix100vh();
     findHeight();
@@ -44,4 +45,24 @@ function findHeight() {
       }
     }
   }
+}
+
+function animation() {
+  const tlPromo = gsap.timeline({});
+
+  tlPromo
+    .to(".promo__title span:first-child", {
+      duration: 1.5,
+      x: 0,
+      ease: "back.out(1.1)",
+    })
+    .to(
+      ".promo__title span:last-child",
+      {
+        duration: 1.5,
+        x: 0,
+        ease: "back.out(1.1)",
+      },
+      "<",
+    );
 }
