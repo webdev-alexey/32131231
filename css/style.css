@@ -368,6 +368,7 @@ img {
 .promo {
   position: relative;
   padding-top: 142px;
+  overflow: hidden;
 }
 
 .promo__top {
@@ -388,10 +389,12 @@ img {
 
 .promo__bottom {
   position: relative;
+  transform: translateY(100%);
   display: flex;
   justify-content: space-between;
   margin-top: 28px;
   max-height: 380px;
+  opacity: 0;
   z-index: 1;
 }
 

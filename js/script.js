@@ -65,4 +65,30 @@ function animation() {
       },
       "<",
     );
+
+  const tlImages = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".promo",
+      start: "top top",
+      end: "+=50%",
+      scrub: 1,
+      pin: true,
+    },
+  });
+
+  tlImages
+    .to(".promo__bottom", {
+      opacity: 1,
+      y: 0,
+    })
+    .fromTo(
+      ".promo__bottom img",
+      {
+        y: -80,
+      },
+      {
+        y: 40,
+      },
+      "<",
+    );
 }
