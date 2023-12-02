@@ -48,6 +48,7 @@ function findHeight() {
 }
 
 function animation() {
+  // Вылет h1 Point Office space
   const tlPromo = gsap.timeline({});
 
   tlPromo
@@ -66,6 +67,7 @@ function animation() {
       "<",
     );
 
+  // Работа с картинками под h1
   const tlImages = gsap.timeline({
     scrollTrigger: {
       trigger: ".promo",
@@ -88,6 +90,27 @@ function animation() {
       },
       {
         y: 40,
+      },
+      "<",
+    );
+
+  // Бегущие строки
+  const tlLines = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".choose__wrap",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+  tlLines
+    .to(".choose__wrap .top", {
+      xPercent: -60,
+    })
+    .to(
+      ".choose__wrap .bottom",
+      {
+        xPercent: 20,
       },
       "<",
     );
