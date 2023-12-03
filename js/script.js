@@ -114,4 +114,31 @@ function animation() {
       },
       "<",
     );
+
+  // Вылет карточек поочередно, с обратным эффектом
+  gsap.from(".rates-card", {
+    stagger: 0.3,
+    opacity: 0,
+    yPercent: 100,
+    scrollTrigger: {
+      trigger: ".rates",
+      start: "top 10%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Горизонтальный скролл
+  let sections = gsap.utils.toArray(".plus__block");
+
+  gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    delay: 0.3,
+    scrollTrigger: {
+      trigger: ".plus",
+      start: "top top",
+      end: `+=${sections.length * 1000}`,
+      pin: true,
+      scrub: true,
+    },
+  });
 }
