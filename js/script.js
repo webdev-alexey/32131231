@@ -48,6 +48,7 @@ function findHeight() {
 }
 
 function animation() {
+  // Секция 1.
   // Вылет h1 Point Office space
   const tlPromo = gsap.timeline({});
 
@@ -94,7 +95,7 @@ function animation() {
       "<",
     );
 
-  // Бегущие строки
+  // Секция 2. Бегущие строки
   const tlLines = gsap.timeline({
     scrollTrigger: {
       trigger: ".choose__wrap",
@@ -115,7 +116,7 @@ function animation() {
       "<",
     );
 
-  // Вылет карточек поочередно, с обратным эффектом
+  // Секция 3. Вылет карточек поочередно, с обратным эффектом
   gsap.from(".rates-card", {
     stagger: 0.3,
     opacity: 0,
@@ -127,7 +128,7 @@ function animation() {
     },
   });
 
-  // Горизонтальный скролл
+  // Секция 4. Горизонтальный скролл
   let sections = gsap.utils.toArray(".plus__block");
 
   gsap.to(sections, {
@@ -141,4 +142,50 @@ function animation() {
       scrub: true,
     },
   });
+
+  // Секция 5. Заливка фона + работа с изображениями
+  // Заливка фона
+  const tlPoint = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".point",
+      start: "top center",
+      end: "bottom bottom",
+      toggleActions: "play reverse play reverse",
+    },
+  });
+  tlPoint
+    .to(".point", {
+      backgroundColor: "#000",
+    })
+    .to(".point__title", {
+      color: "#fff",
+    })
+    .to(
+      ".point__descr",
+      {
+        color: "#fff",
+      },
+      "<",
+    );
+
+  // Работа с изображениями scale
+  const tlImg = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".point__wrapper",
+      start: "top top",
+      pin: true,
+      scrub: 1,
+    },
+  });
+
+  tlImg.to(".point__img:first-child img", {
+    scale: 1,
+  });
+  tlImg.to(
+    ".point__img:last-child img",
+    {
+      scale: 0,
+    },
+    "<",
+  );
 }

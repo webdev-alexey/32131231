@@ -837,12 +837,20 @@ img {
 .point__wrapper {
   position: relative;
   width: 100%;
+  height: 100vh;
+}
+
+.point__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .point__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(0.5);
 }
 
 .point__title span {
