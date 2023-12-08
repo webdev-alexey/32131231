@@ -188,4 +188,37 @@ function animation() {
     },
     "<",
   );
+
+  // Секция 6. Элемент "Точка"
+  // Скролл элемента "Точки" до footer-а
+  gsap.to(".footer__point", {
+    y: 0,
+    scrollTrigger: {
+      trigger: ".main",
+      start: "top top",
+      end: "bottom 70%",
+      scrub: true,
+    },
+  });
+  // Изменение размера (scale) и цвета элемента
+  const tlFooter = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "top 70%",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
+  tlFooter
+    .to(".footer__point", {
+      scale: 1,
+    })
+    .to(
+      ".footer__point svg path",
+      {
+        fill: "#ff0027",
+        opacity: 1,
+      },
+      "<",
+    );
 }
