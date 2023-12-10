@@ -140,12 +140,30 @@ function animation() {
       },
     });
     tlPoint
-      .to(".point", {
+      .to("body", {
         backgroundColor: "#000",
       })
-      .to(".point__title", {
-        color: "#fff",
-      })
+      .to(
+        ".plus-block__text",
+        {
+          color: "#fff",
+        },
+        "<",
+      )
+      .to(
+        ".plus-block__title span:last-child",
+        {
+          color: "#fff",
+        },
+        "<",
+      )
+      .to(
+        ".point__title",
+        {
+          color: "#fff",
+        },
+        "<",
+      )
       .to(
         ".point__descr",
         {
@@ -319,12 +337,30 @@ function animation() {
       },
     });
     tlPoint
-      .to(".point", {
+      .to("body", {
         backgroundColor: "#000",
       })
-      .to(".point__title", {
-        color: "#fff",
-      })
+      .to(
+        ".plus-block__text",
+        {
+          color: "#fff",
+        },
+        "<",
+      )
+      .to(
+        ".plus-block__title span:last-child",
+        {
+          color: "#fff",
+        },
+        "<",
+      )
+      .to(
+        ".point__title",
+        {
+          color: "#fff",
+        },
+        "<",
+      )
       .to(
         ".point__descr",
         {
