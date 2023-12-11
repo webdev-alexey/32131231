@@ -49,6 +49,17 @@ function findHeight() {
 
 function animation() {
   function animSmall() {
+    // Прогресс-бар
+    gsap.to(".progressbar", {
+      width: "100%",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+
     // Секция 1.
     // Вылет h1 Point Office space
     const tlPromo = gsap.timeline({});
